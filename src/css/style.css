@@ -66,7 +66,6 @@ main {
   z-index: 1000;
 }
 main .login {
-  border-radius: 0px 15px 45px 15px;
   padding: 50px;
   background: #fff;
   width: 100%;
@@ -74,7 +73,7 @@ main .login {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  align-items: center;
+  align-items: flex-start;
 }
 main .login h1 {
   font-size: 24px;
@@ -87,7 +86,7 @@ main .login h1 {
 }
 main .login .inputBox {
   position: relative;
-  width: 90%;
+  width: 100%;
 }
 main .login .inputBox input {
   position: relative;
@@ -120,7 +119,7 @@ main .login .inputBox input#btn {
 }
 main .login .group {
   display: flex;
-  width: 80%;
+  width: 100%;
   justify-content: space-between;
 }
 main .login .group a {
