@@ -1,3 +1,31 @@
+.bubbles {
+  position: relative;
+  display: flex;
+}
+.bubbles span {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: #bdebca;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px rgba(79, 220, 126, 0.2666666667), 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(120s / var(--i));
+}
+.bubbles span:nth-child(even) {
+  background: #1dd1a1;
+  box-shadow: 0 0 0 10px rgba(45, 255, 202, 0.2666666667), 0 0 50px #2dff49, 0 0 100px #2dff2d;
+}
+
+@keyframes animate {
+  from {
+    transform: translateY(100vh) scale(0);
+  }
+  to {
+    transform: translateY(-90vh) scale(1.2);
+  }
+}
 html {
   font-size: 14px;
 }
@@ -27,14 +55,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
   background: #15161d;
 }
 
 main {
   min-width: 400px;
+  z-index: 1000;
 }
 main .login {
+  border-radius: 0px 15px 45px 15px;
   padding: 50px;
   background: #fff;
   width: 100%;

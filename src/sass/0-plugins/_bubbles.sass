@@ -1,0 +1,27 @@
+@use '../1-base/variables'
+@use '../1-base/base-mixin'
+
+.bubbles
+    position: relative
+    display: flex
+
+    span
+        position: relative
+        width: 30px
+        height: 30px
+        background-color: variables.$bubbles-1
+        margin: 0 4px
+        border-radius:50%
+        box-shadow: 0 0 0 10px #4fdc7e44, 0 0 50px #4fc3dc,  0 0 100px  #4fc3dc
+        animation: animate 15s linear infinite   
+        animation-duration: calc(120s / var(--i)) 
+        
+    
+
+
+    span:nth-child(even)
+   
+        background: variables.$bubbles-2
+        box-shadow: 0 0 0 10px #2dffca44, 0 0 50px #2dff49,  0 0 100px  #2dff2d     
+   
+

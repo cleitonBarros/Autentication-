@@ -4,14 +4,19 @@ body
     display: flex
     justify-content: center
     align-items: center
-    min-height: 100vh
+    flex-direction: column
+    height: 100vh
+    overflow: hidden
     background: variables.$bg-color
     
 
+
 main
-   
+    
     min-width: 400px
+    z-index: 1000
     .login
+        border-radius: 0px 15px 45px 15px
         padding: 50px
         background: #fff
         width: 100%
