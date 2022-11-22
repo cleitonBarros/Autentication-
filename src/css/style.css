@@ -14,14 +14,6 @@ i {
   color: #d10024;
 }
 
-a {
-  text-decoration: none;
-  transition: 0.4s;
-}
-a:hover {
-  color: #d10024;
-}
-
 input {
   border: none;
   outline: none;
@@ -29,6 +21,75 @@ input {
 
 ul {
   list-style: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #15161d;
+}
+
+main {
+  min-width: 400px;
+}
+main .login {
+  padding: 50px;
+  background: #fff;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+main .login h1 {
+  font-size: 24px;
+  font-weight: bold;
+  border-left: 15px solid #1dd1a1;
+  line-height: 1em;
+  padding-left: 10px;
+  transition: 0.5s;
+  color: #333;
+}
+main .login .inputBox {
+  position: relative;
+  width: 90%;
+}
+main .login .inputBox input {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #555;
+  font-size: 1rem;
+  color: #333;
+}
+main .login .inputBox input .fa-eye {
+  display: absolute;
+  left: 20px;
+}
+main .login .inputBox input#btn {
+  border: none;
+  background: #1dd1a1;
+  color: #fff;
+  transition: 0.5s;
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
+}
+main .login .group {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+main .login .group a {
+  color: #333;
+  text-decoration: none;
+}
+main .login .group a:nth-child(2) {
+  font-weight: 500;
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=style.css.map */

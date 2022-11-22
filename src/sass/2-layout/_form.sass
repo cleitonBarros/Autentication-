@@ -1,0 +1,73 @@
+@use '../1-base/variables'
+
+body
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 100vh
+    background: variables.$bg-color
+    
+
+main
+   
+    min-width: 400px
+    .login
+        padding: 50px
+        background: #fff
+        width: 100%
+        position: relative
+        display: flex
+        flex-direction: column
+        gap: 1.25rem
+        align-items: center 
+
+        h1
+            font-size: 24px
+            font-weight: bold
+            border-left: 15px solid #1dd1a1 
+            line-height: 1em
+            padding-left: 10px
+            transition:0.5s
+            color: #333
+        .inputBox
+            position: relative
+            width:90%
+
+            input
+                position: relative
+                width:100%
+                padding: 10px
+                border: 2px solid #555
+                font-size: 1rem
+                color: #333
+
+                .fa-eye
+                    display: absolute
+                    left: 20px
+
+            input#btn
+                border: none
+                background: #1dd1a1
+                color: #fff
+                transition:0.5s
+                font-size: 1.1em
+                font-weight:500
+                cursor: pointer
+
+        .group
+            display: flex
+            width: 80%
+            justify-content: space-between
+
+            a
+                color: #333
+                text-decoration: none
+
+            a:nth-child(2)
+                font-weight: 500
+                text-decoration: underline
+
+
+
+    
+
