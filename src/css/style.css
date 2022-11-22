@@ -65,9 +65,17 @@ main .login .inputBox input {
   font-size: 1rem;
   color: #333;
 }
-main .login .inputBox input .fa-eye {
-  display: absolute;
-  left: 20px;
+main .login .inputBox .fa-eye {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  font-weight: normal;
+  color: black;
+}
+main .login .inputBox .fa-eye:hover {
+  color: #1dd1a1;
+  font-weight: bold;
 }
 main .login .inputBox input#btn {
   border: none;
