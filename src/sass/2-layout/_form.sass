@@ -15,7 +15,10 @@ main
     
     min-width: 400px
     z-index: 1000
-    .login
+   
+
+    
+    .login, .sign-in
         padding: 50px
         background: #fff
         width: 100%
@@ -26,6 +29,10 @@ main
         gap: 1.25rem
         align-items: flex-start
 
+        opacity: 1
+        
+    
+  
         h1
             font-size: 24px
             font-weight: bold
@@ -47,6 +54,7 @@ main
                 color: #333
 
             .fa-eye
+                cursor: pointer
                 position: absolute
                 right: 10px
                 top: 10px
@@ -57,7 +65,7 @@ main
                     color: #1dd1a1
                     font-weight: bold
 
-            input#btn
+            input.btn
                 border: none
                 background: #1dd1a1
                 color: #fff
@@ -78,8 +86,27 @@ main
             a:nth-child(2)
                 font-weight: 500
                 text-decoration: underline
+    .sign-in .group 
+        display: flex
+        width: 100%
+        justify-content: center
+
+        &:hover
+            text-decoration: underline
+            
 
 
+    .login.hidden
+        display: none
+        visibility: hidden
+        opacity: 0
+        
+    .sign-in.hidden
+        display: none
+        visibility: hidden
+        opacity: 0
+
+ 
 
     
 

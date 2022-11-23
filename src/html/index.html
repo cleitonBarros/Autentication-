@@ -10,7 +10,7 @@
 </head>
 <body>
     <main class="main">
-    <form action="" class="login">  
+    <form action="" class="login ">  
       <h1 id="txt">Login</h1>
       <div class="inputBox">
             <input type="text" placeholder="Username">
@@ -20,11 +20,36 @@
           <i class="fa-regular fa-eye"></i>
       </div>
       <div class="inputBox">
-          <input id="btn" type="submit" value="Login">
+          <input class="btn" type="submit" value="Login">
       </div>
       <div class="group">
           <a href="#">Forget Password</a>
-          <a href="#">Sign Up</a>
+          <a class="signUp"href="#">Sign Up</a>
+      </div>
+        
+    </form>
+
+    <form action="" class="sign-in hidden">  
+      <h1 id="txt">Cadastrar</h1>
+      <div class="inputBox">
+            <input type="text" placeholder="name">
+      </div>
+      <div class="inputBox">
+        <input type="text" placeholder="usename">
+      </div>
+      <div class="inputBox">
+        <input type="password"   id="password"  placeholder="Password">
+        <i id="versenha" class="fa-regular fa-eye"></i>
+      </div>
+      <div class="inputBox">
+          <input type="password"  autocomplete=""  id="repassword"  placeholder="Re-Password">
+          <i class="fa-regular fa-eye"></i>
+      </div>
+      <div class="inputBox">
+          <input class="btn" autocomplete=""  type="submit" value="cadastrar">
+      </div>
+      <div class="group">
+          <a class="backTologin" href="#">Login</a>
       </div>
         
     </form>
@@ -74,6 +99,6 @@
     <span style="--i:28"></span>
     <span style="--i:17"></span>       
   </div>
-  
+  <script src="../js/main.js"></script>
 </body>
 </html>
