@@ -13,20 +13,16 @@
     <form action="" class="login ">  
       <h1 id="txt">Login</h1>
       <div class="inputBox">
-            <input type="text" placeholder="Username">
+          <label ></label>
+          <input type="text" placeholder="Username">
       </div>
       <div class="inputBox">
+          <label ></label>
           <input type="password" id="senhaLogin" placeholder="Password">
           <i id="verSenhaLogin" class="fa-regular fa-eye"></i>
       </div>
       <div class="inputBox">
-          <input class="btn" type="submit" value="Login">
-      </div>
-      <div class="inputBox">
-          <input class="btn" type="submit" value="Login">
-      </div>
-      <div class="inputBox">
-          <input class="btn" type="submit" value="Login">
+          <input class="btn" type="button"  value="Login">
       </div>
       <div class="group">
           <a href="#">Forget Password</a>
@@ -37,22 +33,28 @@
 
     <form action="" class="sign-in hidden">  
       <h1 id="txt">Cadastrar</h1>
+      
       <div class="inputBox">
-            <input type="text" placeholder="name">
+          <label class="labelNome" ></label>
+          <input type="text" id="name" placeholder="name">
       </div>
       <div class="inputBox">
-        <input type="text" placeholder="usename">
+          <label class="labelUser"></label>
+          <input type="text" id="username" placeholder="usename">
       </div>
       <div class="inputBox">
-        <input type="password"   id="senhaCadastro"    placeholder="Password">
+          <label class="labelSenhaCadastro"></label>
+          <input type="password"  id="senhaCadastro"  placeholder="Password">
         <i id="verSenha" class="fa-regular fa-eye"></i>
       </div>
       <div class="inputBox">
+          <label class="labelConfirmSenha" ></label>
           <input type="password"   id="confirmSenha"  placeholder="Re-Password">
           <i id="verConfirmSenha"class="fa-regular fa-eye "></i>
       </div>
       <div class="inputBox">
-          <input class="btn"   type="submit" value="cadastrar">
+        
+          <input class="btn" onclick="cadastrar()" type="button" value="cadastrar">
       </div>
       <div class="group">
           <a class="backTologin" href="#">Login</a>

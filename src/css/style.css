@@ -93,7 +93,7 @@ main .login .inputBox, main .sign-in .inputBox {
 main .login .inputBox input, main .sign-in .inputBox input {
   position: relative;
   width: 100%;
-  padding: 10px;
+  padding: 10px 5px;
   border: 2px solid #555;
   font-size: 1rem;
   color: #333;
