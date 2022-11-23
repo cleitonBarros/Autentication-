@@ -19,8 +19,9 @@ main
 
     
     .login, .sign-in
-        padding: 50px
-        background: #fff
+        padding: 25px
+        min-height: 380px
+        background: variables.$light-color
         width: 100%
         position: relative
         display: flex
@@ -36,11 +37,11 @@ main
         h1
             font-size: 24px
             font-weight: bold
-            border-left: 15px solid #1dd1a1 
+            border-left: 15px solid variables.$primary-color
             line-height: 1em
             padding-left: 10px
             transition:0.5s
-            color: #333
+            color: variables.$dark-color
         .inputBox
             position: relative
             width:100%
@@ -49,9 +50,9 @@ main
                 position: relative
                 width:100%
                 padding: 10px
-                border: 2px solid #555
+                border: 2px solid variables.$gray-color
                 font-size: 1rem
-                color: #333
+                color: variables.$dark-color
 
             .fa-eye
                 cursor: pointer
@@ -62,13 +63,17 @@ main
                 font-weight: normal
                 color: black
                 &:hover
-                    color: #1dd1a1
+                    color: variables.$primary-color
                     font-weight: bold
+                &.active
+                    color: variables.$primary-color
+                    font-weight: bold
+
 
             input.btn
                 border: none
-                background: #1dd1a1
-                color: #fff
+                background: variables.$primary-color
+                color: variables.$light-color
                 transition:0.5s
                 font-size: 1.1em
                 font-weight:500
@@ -80,7 +85,7 @@ main
             justify-content: space-between
 
             a
-                color: #333
+                color: variables.$dark-color
                 text-decoration: none
 
             a:nth-child(2)

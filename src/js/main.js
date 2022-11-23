@@ -1,4 +1,6 @@
-const btnEyes = document.querySelector('.sign-in .fa-eye')
+const btnEyesLogin = document.querySelector('#verSenhaLogin')
+const btnEyes = document.querySelector('#verSenha')
+const btnEyesConfirm = document.querySelector('#verConfirmSenha')
 const signup = document.querySelector('.signUp')
 const formLogin = document.querySelector('.login')
 const formSign = document.querySelector('.sign-in')
@@ -19,12 +21,34 @@ backTologin.addEventListener('click',(e)=>{
     }
 })
 
-btnEyes.addEventListener('click',()=>{
-    
-    let inputSenha = document.querySelector('#password')
+btnEyesLogin.addEventListener('click',(e)=>{
+    let inputSenha = document.querySelector('#senhaLogin')
     if(inputSenha.getAttribute('type') == 'password'){
         inputSenha.setAttribute('type','text')
     }else{
         inputSenha.setAttribute('type','password')
     }
+    btnEyesLogin.classList.toggle('active')
+})
+
+btnEyes.addEventListener('click',()=>{
+    
+    let inputSenha = document.querySelector('#senhaCadastro')
+    if(inputSenha.getAttribute('type') == 'password'){
+        inputSenha.setAttribute('type','text')
+    }else{
+        inputSenha.setAttribute('type','password')
+    }
+    btnEyes.classList.toggle('active')
+    
+})
+btnEyesConfirm.addEventListener('click',()=>{
+    
+    let inputSenha = document.querySelector('#confirmSenha')
+    if(inputSenha.getAttribute('type') == 'password'){
+        inputSenha.setAttribute('type','text')
+    }else{
+        inputSenha.setAttribute('type','password')
+    }
+    btnEyesConfirm.classList.toggle('active')
 })
