@@ -1,15 +1,5 @@
 @use '../1-base/variables'
 
-body
-    display: flex
-    justify-content: center
-    align-items: center
-    flex-direction: column
-    height: 100vh
-    overflow: hidden
-    background: variables.$bg-color
-    
-
 
 main
     
@@ -31,9 +21,7 @@ main
         align-items: flex-start
 
         opacity: 1
-        
-    
-  
+
         h1
             font-size: 24px
             font-weight: bold
@@ -42,44 +30,6 @@ main
             padding-left: 10px
             transition:0.5s
             color: variables.$dark-color
-        .inputBox
-            position: relative
-            width:100%
-            
-            
-            input
-                position: relative
-                width:100%
-                padding: 10px 5px
-                border: 2px solid variables.$gray-color
-                font-size: 1rem
-                color: variables.$dark-color
-
-            .fa-eye
-                cursor: pointer
-                position: absolute
-                right: 10px
-                top: 10px
-                font-size: 20px
-                font-weight: normal
-                color: black
-                &:hover
-                    color: variables.$primary-color
-                    font-weight: bold
-                &.active
-                    color: variables.$primary-color
-                    font-weight: bold
-
-            
-            input.btn
-                border: none
-                background: variables.$primary-color
-                color: variables.$light-color
-                transition:0.5s
-                font-size: 1.1em
-                font-weight:500
-                cursor: pointer
-
         .group
             display: flex
             width: 100%

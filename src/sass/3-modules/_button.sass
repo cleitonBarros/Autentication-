@@ -1,0 +1,27 @@
+@use '../1-base/variables'
+
+.fa-eye
+    cursor: pointer
+    position: absolute
+    right: 10px
+    top: 10px
+    font-size: 20px
+    font-weight: normal
+    color: black
+    &:hover
+        color: variables.$primary-color
+        font-weight: bold
+
+    &.active
+        color: variables.$primary-color
+        font-weight: bold
+
+            
+input.btn
+    border: none
+    background: variables.$primary-color
+    color: variables.$light-color
+    transition:0.5s
+    font-size: 1.1em
+    font-weight:500
+    cursor: pointer

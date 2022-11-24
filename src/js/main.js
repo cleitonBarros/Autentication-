@@ -1,3 +1,4 @@
+
 const btnEyesLogin = document.querySelector('#verSenhaLogin')
 const btnEyes = document.querySelector('#verSenha')
 const btnEyesConfirm = document.querySelector('#verConfirmSenha')
@@ -13,17 +14,16 @@ const labelConfirmSenha= document.querySelector('.labelConfirmSenha')
 
 const input = document.querySelector('input')
 const nome = document.querySelector('#name')
-const user = document.querySelector('#username')
+const userCad = document.querySelector('#username')
 const senhaCadastro = document.querySelector('#senhaCadastro')
 const confirmasenha = document.querySelector('#confirmSenha')
-
-const msgError = document.querySelector('#msgError')
-const msgSuccess = document.querySelector('#msgSucess')
 
 let validNome = false;
 let validUser = false;
 let validSenha = false;
 let validConfirmSenha = false;
+
+
 
 
 nome.addEventListener('keyup', ()=>{
@@ -39,15 +39,15 @@ nome.addEventListener('keyup', ()=>{
         validNome =true
     }
 })
-user.addEventListener('keyup', ()=>{
-    if(user.value.length <=4  && user.value.length > 0){
-        user.setAttribute('style','color:red; border-color: coral; ')
+userCad.addEventListener('keyup', ()=>{
+    if(userCad.value.length <=4  && userCad.value.length > 0){
+        userCad.setAttribute('style','color:red; border-color: coral; ')
         labelUser.setAttribute('style','color:red')
         validUser = false;
         //labelUser.innerHTML ='* Insira no minimo 5 caracters'
        
     }else {
-        user.setAttribute('style','color:#333; border-color: #1dd1a1; ')
+        userCad.setAttribute('style','color:#333; border-color: #1dd1a1; ')
         validUser = true;
        // labelUser.innerHTML =''
     }
@@ -78,14 +78,6 @@ confirmasenha.addEventListener('keyup', ()=>{
        // labelSenha.innerHTML =''
     }
 })
-function cadastrar(){   
-    if(validNome || validSenha || validUser || validConfirmSenha){
-        msgSuccess.setAttribute('style', 'display:block')
-
-    }else{
-        msgError.setAttribute('style', 'display:block')
-    }
-}
 signup.addEventListener('click',(e)=>{
     e.preventDefault();
     formLogin.classList.add('hidden')
@@ -132,3 +124,93 @@ btnEyesConfirm.addEventListener('click',()=>{
     }
     btnEyesConfirm.classList.toggle('active')
 })
+function cadastrar(){ 
+    const msgError = document.querySelector('#msgError')
+    const msgSuccess = document.querySelector('#msgSuccess')
+    if(validNome && validSenha && validUser && validConfirmSenha){
+       
+        let listUser = JSON.parse(localStorage.getItem('listUser')|| '[]')
+        listUser.push(
+            {
+                name: nome.value,
+                user: userCad.value,
+                password: senhaCadastro.value
+    
+            }
+        )
+        localStorage.setItem('listUser',JSON.stringify(listUser))
+        
+
+        msgSuccess.setAttribute('style', 'display:block')
+        msgSuccess.innerHTML = 'Cadastrando com sucesso'
+        msgError.setAttribute('style', 'display:none')
+        
+        setTimeout(() =>{
+            formSign.classList.add('hidden')
+            formLogin.classList.remove('hidden')
+        },1000)
+
+    }else{
+        msgError.setAttribute('style', 'display:block')
+        msgError.innerHTML = 'Preencha todos os campos corretamente '
+        msgSuccess.setAttribute('style', 'display:none')
+    }
+}
+function entrar() {
+    let userLogin = document.querySelector('#userLogin')
+    let senhaLogin = document.querySelector('#senhaLogin')
+    let msgError = document.querySelector('.msgError')
+    let listUser = []
+
+    let userValid = {
+        name: '',
+        user: '',
+        password:''
+    }
+    listUser = JSON.parse(localStorage.getItem('listUser'))
+
+    listUser.forEach((item)=>{
+        if(userLogin.value === item.user && senhaLogin.value === item.password){
+            userValid={
+                name: item.name,
+                user: item.user,
+                password: item.password
+            }
+        }
+    })
+
+
+    if(userLogin.value == userValid.user && senhaLogin.value == userValid.password ){
+        let link = "../pages/home.html"
+        window.location.href = link
+        let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2)
+
+        localStorage.setItem('token', token)
+        localStorage.setItem('userLogado', JSON.stringify(userValid))
+
+   
+    }else{
+        userLogin.setAttribute('style','border-color: coral')
+        senhaLogin.setAttribute('style','border-color: coral')
+        msgError.setAttribute('style','display: block;')
+        msgError.innerHTML ='Algo esta errado, verifique o usuario e senha informados '
+
+        userLogin.focus()
+
+    }
+}
+/*
+if(localStorage.getItem('token') === null){
+    alert('voce precisa esta logado para acessa essa pagina')
+    window.location.href ="../html/"
+    
+}
+const userLogado = JSON.parse(localStorage.getItem('userLogado')) 
+const logado = document.querySelector('#logado')
+logado.innerHTML = `Bem vindo ${userLogado.name}`*/
+
+function sair(){
+    localStorage.removeItem('token')
+    localStorage.removeItem('userLogado')
+    window.location.href ='../html/'
+}

@@ -1,3 +1,22 @@
+.msgError,
+#msgError {
+  text-align: center;
+  color: #e32636;
+  background: #ffbbbb;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+
+#msgSuccess {
+  text-align: center;
+  color: #1dd1a1;
+  background: #bbffbe;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+
 .bubbles {
   position: relative;
   display: flex;
@@ -11,7 +30,7 @@
   border-radius: 50%;
   box-shadow: 0 0 0 10px rgba(79, 220, 126, 0.2666666667), 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
   animation: animate 15s linear infinite;
-  animation-duration: calc(120s / var(--i));
+  animation-duration: calc(130s / var(--i));
 }
 .bubbles span:nth-child(even) {
   background: #1dd1a1;
@@ -20,7 +39,7 @@
 
 @keyframes animate {
   from {
-    transform: translateY(100vh) scale(0);
+    transform: translateY(60vh) scale(0);
   }
   to {
     transform: translateY(-90vh) scale(1.2);
@@ -28,6 +47,16 @@
 }
 html {
   font-size: 14px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: #15161d;
 }
 
 * {
@@ -49,16 +78,6 @@ input {
 
 ul {
   list-style: none;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-  background: #15161d;
 }
 
 main {
@@ -84,44 +103,6 @@ main .login h1 {
   padding-left: 10px;
   transition: 0.5s;
   color: #333;
-}
-main .login .inputBox {
-  position: relative;
-  width: 100%;
-}
-main .login .inputBox input {
-  position: relative;
-  width: 100%;
-  padding: 10px 5px;
-  border: 2px solid #555;
-  font-size: 1rem;
-  color: #333;
-}
-main .login .inputBox .fa-eye {
-  cursor: pointer;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  font-size: 20px;
-  font-weight: normal;
-  color: black;
-}
-main .login .inputBox .fa-eye:hover {
-  color: #1dd1a1;
-  font-weight: bold;
-}
-main .login .inputBox .fa-eye.active {
-  color: #1dd1a1;
-  font-weight: bold;
-}
-main .login .inputBox input.btn {
-  border: none;
-  background: #1dd1a1;
-  color: #fff;
-  transition: 0.5s;
-  font-size: 1.1em;
-  font-weight: 500;
-  cursor: pointer;
 }
 main .login .group {
   display: flex;
@@ -167,60 +148,6 @@ main .login.hidden {
   transition: 0.5s;
   color: #333;
 }
-.sign-in #msgError {
-  text-align: center;
-  color: #1dd1a1;
-  background: #bbffbe;
-  padding: 10px;
-  border-radius: 4px;
-  display: none;
-}
-.sign-in #msgSuccess {
-  text-align: center;
-  color: #e32636;
-  background: #ffbbbb;
-  padding: 10px;
-  border-radius: 4px;
-  display: none;
-}
-.sign-in .inputBox {
-  position: relative;
-  width: 100%;
-}
-.sign-in .inputBox input {
-  position: relative;
-  width: 100%;
-  padding: 10px 5px;
-  border: 2px solid #555;
-  font-size: 1rem;
-  color: #333;
-}
-.sign-in .inputBox .fa-eye {
-  cursor: pointer;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  font-size: 20px;
-  font-weight: normal;
-  color: black;
-}
-.sign-in .inputBox .fa-eye:hover {
-  color: #1dd1a1;
-  font-weight: bold;
-}
-.sign-in .inputBox .fa-eye.active {
-  color: #1dd1a1;
-  font-weight: bold;
-}
-.sign-in .inputBox input.btn {
-  border: none;
-  background: #1dd1a1;
-  color: #fff;
-  transition: 0.5s;
-  font-size: 1.1em;
-  font-weight: 500;
-  cursor: pointer;
-}
 .sign-in .group {
   display: flex;
   width: 100%;
@@ -242,6 +169,59 @@ main .login.hidden {
 }
 .sign-in .group:hover {
   text-decoration: underline;
+}
+
+#homeMain {
+  padding: 25px;
+  max-width: 500px;
+  background: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+  opacity: 1;
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+}
+.inputBox input {
+  position: relative;
+  width: 100%;
+  padding: 10px 5px;
+  border: 2px solid #555;
+  font-size: 1rem;
+  color: #333;
+}
+
+.fa-eye {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  font-weight: normal;
+  color: black;
+}
+.fa-eye:hover {
+  color: #1dd1a1;
+  font-weight: bold;
+}
+.fa-eye.active {
+  color: #1dd1a1;
+  font-weight: bold;
+}
+
+input.btn {
+  border: none;
+  background: #1dd1a1;
+  color: #fff;
+  transition: 0.5s;
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
