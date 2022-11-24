@@ -1,0 +1,106 @@
+@use '../1-base/variables'
+.sign-in
+    padding: 25px
+        
+    background: variables.$light-color
+    width: 100%
+    position: relative
+    display: flex
+    flex-direction: column
+        
+    gap: 1.25rem
+    align-items: flex-start
+
+    opacity: 1
+
+    &.hidden   
+        display: none
+        visibility: hidden
+        opacity: 0
+    h1
+        font-size: 24px
+        font-weight: bold
+        border-left: 15px solid variables.$primary-color
+        line-height: 1em
+        padding-left: 10px
+        transition:0.5s
+        color: variables.$dark-color
+
+    #msgError
+        text-align: center
+        color: variables.$primary-color
+        background: #bbffbe
+        padding: 10px 
+        border-radius: 4px 
+        display: none
+
+    #msgSuccess
+        text-align: center
+        color: variables.$error-color
+        background: #ffbbbb
+        padding: 10px 
+        border-radius: 4px 
+        display: none
+
+    .inputBox
+        position: relative
+        width:100%
+            
+            
+        input
+            position: relative
+            width:100%
+            padding: 10px 5px
+            border: 2px solid variables.$gray-color
+            font-size: 1rem
+            color: variables.$dark-color
+
+        .fa-eye
+            cursor: pointer
+            position: absolute
+            right: 10px
+            top: 10px
+            font-size: 20px
+            font-weight: normal
+            color: black
+            &:hover
+                color: variables.$primary-color
+                font-weight: bold
+            &.active
+                color: variables.$primary-color
+                font-weight: bold    
+                      
+        input.btn
+            border: none
+            background: variables.$primary-color
+            color: variables.$light-color
+            transition:0.5s
+            font-size: 1.1em
+            font-weight:500
+            cursor: pointer
+
+    .group
+        display: flex
+        width: 100%
+        justify-content: space-between
+
+        a
+            color: variables.$dark-color
+            text-decoration: none
+
+        a:nth-child(2)
+            font-weight: 500
+            text-decoration: underline
+.sign-in .group 
+    display: flex
+    width: 100%
+    justify-content: center
+
+    &:hover
+        text-decoration: underline
+            
+
+
+    
+        
+

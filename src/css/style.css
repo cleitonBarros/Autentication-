@@ -65,9 +65,8 @@ main {
   min-width: 400px;
   z-index: 1000;
 }
-main .login, main .sign-in {
+main .login {
   padding: 25px;
-  min-height: 380px;
   background: #fff;
   width: 100%;
   position: relative;
@@ -77,7 +76,7 @@ main .login, main .sign-in {
   align-items: flex-start;
   opacity: 1;
 }
-main .login h1, main .sign-in h1 {
+main .login h1 {
   font-size: 24px;
   font-weight: bold;
   border-left: 15px solid #1dd1a1;
@@ -86,11 +85,11 @@ main .login h1, main .sign-in h1 {
   transition: 0.5s;
   color: #333;
 }
-main .login .inputBox, main .sign-in .inputBox {
+main .login .inputBox {
   position: relative;
   width: 100%;
 }
-main .login .inputBox input, main .sign-in .inputBox input {
+main .login .inputBox input {
   position: relative;
   width: 100%;
   padding: 10px 5px;
@@ -98,7 +97,7 @@ main .login .inputBox input, main .sign-in .inputBox input {
   font-size: 1rem;
   color: #333;
 }
-main .login .inputBox .fa-eye, main .sign-in .inputBox .fa-eye {
+main .login .inputBox .fa-eye {
   cursor: pointer;
   position: absolute;
   right: 10px;
@@ -107,15 +106,15 @@ main .login .inputBox .fa-eye, main .sign-in .inputBox .fa-eye {
   font-weight: normal;
   color: black;
 }
-main .login .inputBox .fa-eye:hover, main .sign-in .inputBox .fa-eye:hover {
+main .login .inputBox .fa-eye:hover {
   color: #1dd1a1;
   font-weight: bold;
 }
-main .login .inputBox .fa-eye.active, main .sign-in .inputBox .fa-eye.active {
+main .login .inputBox .fa-eye.active {
   color: #1dd1a1;
   font-weight: bold;
 }
-main .login .inputBox input.btn, main .sign-in .inputBox input.btn {
+main .login .inputBox input.btn {
   border: none;
   background: #1dd1a1;
   color: #fff;
@@ -124,25 +123,17 @@ main .login .inputBox input.btn, main .sign-in .inputBox input.btn {
   font-weight: 500;
   cursor: pointer;
 }
-main .login .group, main .sign-in .group {
+main .login .group {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
-main .login .group a, main .sign-in .group a {
+main .login .group a {
   color: #333;
   text-decoration: none;
 }
-main .login .group a:nth-child(2), main .sign-in .group a:nth-child(2) {
+main .login .group a:nth-child(2) {
   font-weight: 500;
-  text-decoration: underline;
-}
-main .sign-in .group {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-main .sign-in .group:hover {
   text-decoration: underline;
 }
 main .login.hidden {
@@ -150,10 +141,107 @@ main .login.hidden {
   visibility: hidden;
   opacity: 0;
 }
-main .sign-in.hidden {
+
+.sign-in {
+  padding: 25px;
+  background: #fff;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+  opacity: 1;
+}
+.sign-in.hidden {
   display: none;
   visibility: hidden;
   opacity: 0;
+}
+.sign-in h1 {
+  font-size: 24px;
+  font-weight: bold;
+  border-left: 15px solid #1dd1a1;
+  line-height: 1em;
+  padding-left: 10px;
+  transition: 0.5s;
+  color: #333;
+}
+.sign-in #msgError {
+  text-align: center;
+  color: #1dd1a1;
+  background: #bbffbe;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+.sign-in #msgSuccess {
+  text-align: center;
+  color: #e32636;
+  background: #ffbbbb;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+.sign-in .inputBox {
+  position: relative;
+  width: 100%;
+}
+.sign-in .inputBox input {
+  position: relative;
+  width: 100%;
+  padding: 10px 5px;
+  border: 2px solid #555;
+  font-size: 1rem;
+  color: #333;
+}
+.sign-in .inputBox .fa-eye {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  font-weight: normal;
+  color: black;
+}
+.sign-in .inputBox .fa-eye:hover {
+  color: #1dd1a1;
+  font-weight: bold;
+}
+.sign-in .inputBox .fa-eye.active {
+  color: #1dd1a1;
+  font-weight: bold;
+}
+.sign-in .inputBox input.btn {
+  border: none;
+  background: #1dd1a1;
+  color: #fff;
+  transition: 0.5s;
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: pointer;
+}
+.sign-in .group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.sign-in .group a {
+  color: #333;
+  text-decoration: none;
+}
+.sign-in .group a:nth-child(2) {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.sign-in .group {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.sign-in .group:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=style.css.map */

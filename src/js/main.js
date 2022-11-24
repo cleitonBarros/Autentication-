@@ -17,42 +17,74 @@ const user = document.querySelector('#username')
 const senhaCadastro = document.querySelector('#senhaCadastro')
 const confirmasenha = document.querySelector('#confirmSenha')
 
+const msgError = document.querySelector('#msgError')
+const msgSuccess = document.querySelector('#msgSucess')
+
+let validNome = false;
+let validUser = false;
+let validSenha = false;
+let validConfirmSenha = false;
+
+
 nome.addEventListener('keyup', ()=>{
     if(nome.value.length <= 3 && nome.value.length > 0){
         nome.setAttribute('style','color:red; border-color: coral; ')
         labelNome.setAttribute('style','color:red')
-        labelNome.innerHTML ='* Insira no minimo 4 caracters'
+        validNome = false
+       // labelNome.innerHTML ='* Insira no minimo 4 caracters'
        
     }else {
-        nome.setAttribute('style','color:#333')
-        labelNome.innerHTML =''
+        nome.setAttribute('style','color:#333;  border-color: #1dd1a1;')
+        //labelNome.innerHTML =''
+        validNome =true
     }
 })
 user.addEventListener('keyup', ()=>{
     if(user.value.length <=4  && user.value.length > 0){
         user.setAttribute('style','color:red; border-color: coral; ')
         labelUser.setAttribute('style','color:red')
-        labelUser.innerHTML ='* Insira no minimo 5 caracters'
+        validUser = false;
+        //labelUser.innerHTML ='* Insira no minimo 5 caracters'
        
     }else {
-        user.setAttribute('style','color:#333')
-        labelUser.innerHTML =''
+        user.setAttribute('style','color:#333; border-color: #1dd1a1; ')
+        validUser = true;
+       // labelUser.innerHTML =''
     }
 })
 senhaCadastro.addEventListener('keyup', ()=>{
     if(senhaCadastro.value.length <=4 && senhaCadastro.value.length > 0){
         senhaCadastro.setAttribute('style','color:red; border-color: coral; ')
         labelSenha.setAttribute('style','color:red')
-        labelSenha.innerHTML ='* Insira no minimo 6 caracters'
+        validSenha = false;
+        //labelSenha.innerHTML ='* Insira no minimo 6 caracters'
        
     }else {
-        user.setAttribute('style','color:#333')
-        labelSenha.innerHTML =''
+        senhaCadastro.setAttribute('style','color: #333;  border-color: #1dd1a1;')
+        validSenha = true;
+       // labelSenha.innerHTML =''
     }
 })
-
+confirmasenha.addEventListener('keyup', ()=>{
+    if(confirmasenha.value != senhaCadastro.value){
+        confirmasenha.setAttribute('style','color:red; border-color: coral; ')
+        labelConfirmSenha.setAttribute('style','color:red')
+        validConfirmSenha = false;
+        //labelSenha.innerHTML ='* Insira no minimo 6 caracters'
+       
+    }else {
+        confirmasenha.setAttribute('style','color:#333; border-color: #1dd1a1')
+        validConfirmSenha = true;
+       // labelSenha.innerHTML =''
+    }
+})
 function cadastrar(){   
-    alert('botao clicado')
+    if(validNome || validSenha || validUser || validConfirmSenha){
+        msgSuccess.setAttribute('style', 'display:block')
+
+    }else{
+        msgError.setAttribute('style', 'display:block')
+    }
 }
 signup.addEventListener('click',(e)=>{
     e.preventDefault();
