@@ -124,10 +124,10 @@ function cadastrar(){
     const msgSuccess = document.querySelector('#msgSuccess')
     if(validNome && validSenha && validUser && validConfirmSenha){
        
-        let listUser = JSON.parse(localStorage.getItem('listUser')|| '[]')
+        let listUser = localStorage.getItem('listUser') ? JSON.parse(localStorage.getItem('listUser')) : []
         listUser.push(
             {
-                name: userCad.value,
+                name: nomeCad.value,
                 user: userCad.value,
                 password: senhaCadastro.value
     
