@@ -1,3 +1,4 @@
+//import createdLocalStorage from '../js/localstorage.js'
 
 const btnEyesLogin = document.querySelector('#verSenhaLogin')
 const btnEyes = document.querySelector('#verSenha')
@@ -6,16 +7,17 @@ const signup = document.querySelector('.signUp')
 const formLogin = document.querySelector('.login')
 const formSign = document.querySelector('.sign-in')
 const backTologin = document.querySelector('.backTologin')
+const btnCadastrar = document.querySelector('.btn-cadastrar')
 
 const labelNome = document.querySelector('.labelNome')
 const labelUser= document.querySelector('.labelUser')
 const labelSenha = document.querySelector('.labelSenhaCadastro')
 const labelConfirmSenha= document.querySelector('.labelConfirmSenha')
-
-const input = document.querySelector('input')
 const nomeCad = document.getElementById('name')
 const userCad = document.querySelector('#username')
 const senhaCadastro = document.querySelector('#senhaCadastro')
+const input = document.querySelector('input')
+
 const confirmasenha = document.querySelector('#confirmSenha')
 
 let validNome = false;
@@ -119,11 +121,18 @@ btnEyesConfirm.addEventListener('click',()=>{
     }
     btnEyesConfirm.classList.toggle('active')
 })
+
+function createdLocalStorage(){
+    
+}
+
+//btnCadastrar.addEventListener('click',cadastrar())
+
 function cadastrar(){ 
     const msgError = document.querySelector('#msgError')
     const msgSuccess = document.querySelector('#msgSuccess')
     if(validNome && validSenha && validUser && validConfirmSenha){
-       
+
         let listUser = localStorage.getItem('listUser') ? JSON.parse(localStorage.getItem('listUser')) : []
         listUser.push(
             {
@@ -133,8 +142,8 @@ function cadastrar(){
     
             }
         )
+
         localStorage.setItem('listUser',JSON.stringify(listUser))
-        
 
         msgSuccess.setAttribute('style', 'display:block')
         msgSuccess.innerHTML = 'Cadastrando com sucesso'
@@ -151,6 +160,7 @@ function cadastrar(){
         msgSuccess.setAttribute('style', 'display:none')
     }
 }
+
 function entrar() {
     let userLogin = document.querySelector('#userLogin')
     let senhaLogin = document.querySelector('#senhaLogin')
@@ -176,7 +186,7 @@ function entrar() {
         userLogin.focus()
   
     }
- 
+
    
 
 }  
