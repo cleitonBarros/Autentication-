@@ -1,0 +1,38 @@
+/*
+    let userValid = {
+        name: "",
+        user: "",
+        password:""
+    }
+    listUser = JSON.parse(localStorage.getItem('listUser'))
+
+    listUser?.forEach((item)=>{
+        if(userLogin.value === item.user && senhaLogin.value === item.password){
+            userValid={
+                name: item.name,
+                user: item.user,
+                password: item.password
+            }
+        }
+    })
+
+
+    if(userLogin.value == userValid.user && senhaLogin.value == userValid.password ){
+        
+        window.location.href = "../pages/home.html"
+        let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2)
+
+        localStorage.setItem('token', token)
+        localStorage.setItem('userLogado', JSON.stringify(userValid))
+
+   
+    }else{
+        userLogin.setAttribute('style','border-color: coral')
+        senhaLogin.setAttribute('style','border-color: coral')
+        msgError.setAttribute('style','display: block;')
+        msgError.innerHTML ='Algo esta errado, verifique o usuario e senha informados '
+
+        userLogin.focus()
+
+    }
+}

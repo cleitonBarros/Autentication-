@@ -13,7 +13,7 @@ const labelSenha = document.querySelector('.labelSenhaCadastro')
 const labelConfirmSenha= document.querySelector('.labelConfirmSenha')
 
 const input = document.querySelector('input')
-const nome = document.querySelector('#name')
+const nomeCad = document.getElementById('name')
 const userCad = document.querySelector('#username')
 const senhaCadastro = document.querySelector('#senhaCadastro')
 const confirmasenha = document.querySelector('#confirmSenha')
@@ -23,19 +23,14 @@ let validUser = false;
 let validSenha = false;
 let validConfirmSenha = false;
 
-
-
-
-nome.addEventListener('keyup', ()=>{
-    if(nome.value.length <= 3 && nome.value.length > 0){
-        nome.setAttribute('style','color:red; border-color: coral; ')
-        labelNome.setAttribute('style','color:red')
+nomeCad.addEventListener('keyup', ()=>{
+    if(nomeCad.value.length <= 3 && nomeCad.value.length > 0 ){
+        nomeCad.setAttribute('style','color:red; border-color: coral; ')
         validNome = false
-       // labelNome.innerHTML ='* Insira no minimo 4 caracters'
+       
        
     }else {
-        nome.setAttribute('style','color:#333;  border-color: #1dd1a1;')
-        //labelNome.innerHTML =''
+        nomeCad.setAttribute('style','color:#333;  border-color: #1dd1a1;')
         validNome =true
     }
 })
@@ -132,7 +127,7 @@ function cadastrar(){
         let listUser = JSON.parse(localStorage.getItem('listUser')|| '[]')
         listUser.push(
             {
-                name: nome.value,
+                name: userCad.value,
                 user: userCad.value,
                 password: senhaCadastro.value
     
@@ -162,52 +157,39 @@ function entrar() {
     let msgError = document.querySelector('.msgError')
     let listUser = []
 
-    let userValid = {
-        name: '',
-        user: '',
-        password:''
-    }
     listUser = JSON.parse(localStorage.getItem('listUser'))
-
-    listUser.forEach((item)=>{
-        if(userLogin.value === item.user && senhaLogin.value === item.password){
-            userValid={
-                name: item.name,
-                user: item.user,
-                password: item.password
-            }
-        }
-    })
-
-
-    if(userLogin.value == userValid.user && senhaLogin.value == userValid.password ){
-        let link = "../pages/home.html"
-        window.location.href = link
+    const userValid = listUser.find(item => userLogin.value === item.user && senhaLogin.value === item.password);
+    console.log(userValid)
+    if (userValid) {
+        window.location.href = "../pages/home.html"
         let token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2)
 
         localStorage.setItem('token', token)
         localStorage.setItem('userLogado', JSON.stringify(userValid))
-
-   
-    }else{
+  
+    } else {
         userLogin.setAttribute('style','border-color: coral')
         senhaLogin.setAttribute('style','border-color: coral')
         msgError.setAttribute('style','display: block;')
         msgError.innerHTML ='Algo esta errado, verifique o usuario e senha informados '
 
         userLogin.focus()
-
+  
     }
-}
+ 
+   
+
+}  
+
 /*
 if(localStorage.getItem('token') === null){
     alert('voce precisa esta logado para acessa essa pagina')
     window.location.href ="../html/"
     
-}
-const userLogado = JSON.parse(localStorage.getItem('userLogado')) 
-const logado = document.querySelector('#logado')
-logado.innerHTML = `Bem vindo ${userLogado.name}`*/
+}*/
+let userLogado = JSON.parse(localStorage.getItem('userLogado'))
+let logado = document.querySelector('#logado')
+//logado.innerHTML = `olá ${userLogado.name}`
 
 function sair(){
     localStorage.removeItem('token')

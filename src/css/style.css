@@ -171,6 +171,10 @@ main .login.hidden {
   text-decoration: underline;
 }
 
+.sign-in.hidden input {
+  pointer-events: none;
+}
+
 #homeMain {
   padding: 25px;
   max-width: 500px;
