@@ -45,6 +45,10 @@
     transform: translateY(-90vh) scale(1.2);
   }
 }
+.data {
+  display: none;
+}
+
 html {
   font-size: 14px;
 }

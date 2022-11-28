@@ -122,7 +122,8 @@ btnEyesConfirm.addEventListener('click',()=>{
     btnEyesConfirm.classList.toggle('active')
 })
 
-function createdLocalStorage(){
+function createdLocalStorageGoogleLogin(){
+
     
 }
 
@@ -184,11 +185,35 @@ function entrar() {
         msgError.innerHTML ='Algo esta errado, verifique o usuario e senha informados '
 
         userLogin.focus()
-  
     }
-
-   
-
 }  
 
+function handleCredentialResponse(response) {
+    const data = jwt_decode(response.credential)
+    console.log(data)
+    
+    window.location.href = "../pages/home.html"
+
+    let listUserGoogle = localStorage.getItem('listUserGoolge') ? JSON.parse(localStorage.getItem('listUserGoogle')) : []
+    listUserGoogle.push(
+        {
+            name: data.name,
+            email:data.email,
+            subpassword: data.sub,
+            image: data.picture
+
+        }
+    )
+}
+window.onload = function () {
+    google.accounts.id.initialize({
+      client_id: "231082501742-7iv47ijcinfit05k5pbonu6updd1c5ck.apps.googleusercontent.com",
+      callback: handleCredentialResponse
+    });
+    google.accounts.id.renderButton(
+      document.getElementById("buttonDiv"),
+      { theme: "outline", size: "large", locale: "pt" },  // customization attributes
+    );
+    google.accounts.id.prompt(); // also display the One Tap dialog
+}
 
